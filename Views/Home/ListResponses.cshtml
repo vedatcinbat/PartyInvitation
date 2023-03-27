@@ -1,0 +1,47 @@
+@model IEnumerable<PartyInvites.Models.GuestResponse>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+        <title>Responses</title>
+    </head>
+    <body>
+        <div class="text-center p-2">
+            <h2 class="text-center">Here is the list of people attending in the party</h2>
+        <table class="table table-bordered table-striped table-sm">
+            <thead>
+                <tr><th>Name</th><th>Email</th><th>Phone</th></tr>
+            </thead>
+            <tbody>
+                @foreach(PartyInvites.Models.GuestResponse user in Model!) {
+                    <tr>
+                        <td>@user.Name</td>
+                        <td>@user.Email</td>
+                        <td>@user.Phone</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+            Click <a asp-action="Index" class="btn btn-primary">here</a> to turn back to HomePage!
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
